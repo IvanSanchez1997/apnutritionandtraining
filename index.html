@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AP Nutricional y Deportivo</title>
+    <meta name="description" content="Clínica de Nutrición y Dietética - Centro de Entrenamiento Personal">
+    <meta name="author" content="AP, Centro de Asesoramiento Nutricional y Deportivo">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://apnutricionalydeportivo.com/">
+    <meta property="og:title" content="AP, Centro de Asesoramiento Nutricional y Deportivo">
+    <meta property="og:description" content="CLÍNICA DE NUTRICIÓN Y DIETÉTICA - CENTRO DE ENTRENAMIENTO PERSONAL">
+    <meta property="og:image" content="https://tuservidor.com/sinfondologoasesoriamientoaperez.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AP, Centro de Asesoramiento Nutricional y Deportivo">
+    <meta name="twitter:description" content="Bienvenidos a AP">
+    <meta name="twitter:image" content="https://tuservidor.com/sinfondologoasesoriamientoaperez.png">
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos principales -->
+    <style>
+        :root {
+            --primary-color: #152349;
+            --secondary-color: #0E1938;
+            --accent-color: #4D71D4;
+            --text-light: #FFFFFF;
+            --text-gray: #A5A9BF;
+            --text-dark: #152349;
+            --background-light: #F6F6F6;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-xxl: 72px;
+            --border-radius: 4px;
+            --box-shadow: 0 3px 6px 3px rgba(0,0,0,0.24);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.5rem; }
+        
+        @media (min-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.5rem; }
+            h3 { font-size: 2rem; }
+        }
+        
+        @media (min-width: 1024px) {
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 3rem; }
+        }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .section {
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .section-dark {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+        
+        .section-light {
+            background-color: var(--background-light);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.063em;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background-color: #3A5FC1;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        /* HEADER Y NAVEGACIÓN */
+        .header {
+            background-color: var(--secondary-color);
+            padding: var(--spacing-md) 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            max-height: 80px;
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+        
+        .nav-link {
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.063em;
+            padding: var(--spacing-xs) 0;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--primary-color);
+            min-width: 200px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: var(--spacing-sm);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 1001;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-link {
+            display: block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            color: var(--text-gray);
+        }
+        
+        .dropdown-link:hover {
+            color: var(--text-light);
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+       /* HERO SECTION */
+.hero {
+    background: var(--primary-color);
+    background-size: cover;
+    background-position: center;
+    color: var(--text-light);
+    padding: var(--spacing-xxl) 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-logo {
+    flex: 0 0 auto;
+}
+
+.hero-logo img {
+    max-height: 350px;
+    width: auto;
+    object-fit: contain;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-lg);
+    text-align: left;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-light);
+    text-align: left;
+}
+
+.hero-subtitle ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+.hero-subtitle li {
+    list-style: none;
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-left: 0;
+}
+
+/* Línea decorativa antes de cada elemento */
+.hero-subtitle li:before {
+    content: "•";
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    position: absolute;
+    left: -25px;
+    top: 0;
+}
+
+/* SECCIÓN INFORMACIÓN CON IMAGEN */
+.info-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-image {
+    flex: 1;
+}
+
+.info-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.info-text {
+    flex: 1;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-left .service-icon {
+    margin-bottom: var(--spacing-lg);
+    font-size: 3rem;
+    display: block;
+}
+
+.text-left h3 {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.8rem;
+    line-height: 1.3;
+}
+
+.text-left p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Para que se vea como en la imagen con texto más destacado */
+.text-left p strong {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* RESPONSIVE PARA SECCIÓN INFORMACIÓN */
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+    }
+    
+    .text-left {
+        text-align: center;
+    }
+    
+    .text-left .service-icon {
+        margin: 0 auto var(--spacing-lg);
+    }
+    
+    .text-left hr {
+        margin: var(--spacing-md) auto;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .hero-container {
+        gap: 40px;
+    }
+    
+    .hero-logo img {
+        max-height: 280px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-xl);
+    }
+    
+    .hero-title {
+        text-align: center;
+    }
+    
+    .hero-subtitle {
+        text-align: center;
+    }
+    
+    .hero-subtitle li:before {
+        display: none;
+    }
+    
+    .hero-logo img {
+        max-height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-logo img {
+        max-height: 180px;
+    }
+}
+        
+        /* SERVICIOS */
+        .service-card {
+            background: var(--text-light);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        /* FORMULARIO DE CONTACTO */
+        .contact-form {
+            background: var(--text-light);
+            padding: var(--spacing-xl);
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Roboto', sans-serif;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(77, 113, 212, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .footer-section h4 {
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-section ul li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .footer-section a {
+            color: var(--text-gray);
+        }
+        
+        .footer-section a:hover {
+            color: var(--text-light);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: var(--spacing-md);
+            text-align: center;
+            color: var(--text-gray);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: var(--spacing-xl);
+                transition: var(--transition);
+                z-index: 1002;
+            }
+            
+            .nav-list.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                font-size: 1.2rem;
+                padding: var(--spacing-sm) 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: var(--spacing-xl) 0;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ANIMACIONES */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        /* LOADER */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255,255,255,0.1);
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* WHATSAPP BUTTON */
+        .whatsapp-button {
+            position: fixed;
+            bottom: var(--spacing-lg);
+            right: var(--spacing-lg);
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* COOKIE BANNER */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: var(--spacing-md);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1001;
+            display: none;
+        }
+        
+        .cookie-banner.active {
+            display: block;
+        }
+        
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--spacing-md);
+        }
+        
+        .cookie-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+        
+        .cookie-btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.063em;
+        }
+        
+        .cookie-accept {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+        }
+        
+        .cookie-decline {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--text-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- LOADER -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/34650751468" target="_blank" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <img src="img/logo.png" alt="AP Nutricional y Deportivo" class="logo">
+            </a>
+
+            <!-- Navegación Desktop -->
+            <nav class="nav">
+                <ul class="nav-list" id="navList">
+                    <li><a href="/" class="nav-link active">Inicio</a></li>
+                    <li><a href="/blog" class="nav-link">Blog</a></li>
+                    <li><a href="/sobre-ap" class="nav-link">Sobre AP</a></li>
+                    
+                    <!-- Dropdown Servicios -->
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="/nutricion" class="dropdown-link">NUTRICIÓN</a>
+                            <a href="/entrenar-en-el-centro" class="dropdown-link">ENTRENAR EN EL CENTRO</a>
+                            <a href="/ciclismo" class="dropdown-link">CICLISMO</a>
+                            <a href="/du-triatlon" class="dropdown-link">DU-TRIATLÓN</a>
+                            <a href="/corredores-trailrunners" class="dropdown-link">CORREDORES / TRAILRUNNERS</a>
+                            <a href="/opositores" class="dropdown-link">OPOSITORES</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <!-- Botón menú móvil -->
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-container fade-in">
+                <!-- Logo grande a la izquierda -->
+                <div class="hero-logo">
+                    <img src="img/logo_big.png" alt="AP Nutricional y Deportivo">
+                </div>
+                
+                <!-- Texto a la derecha -->
+                <div class="hero-text">
+                    <h1 class="hero-title">Bienvenidos a AP</h1>
+                    <div class="hero-subtitle fade-in delay-1">
+                        <ul>
+                            <li>CLÍNICA DE NUTRICIÓN Y DIETÉTICA</li>
+                            <li>CENTRO DE ENTRENAMIENTO PERSONAL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PRINCIPAL -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="grid">
+                <div class="fade-in">
+                    <div class="text-center">
+                        <i class="fas fa-comment-dots service-icon"></i>
+                        <h3>En AP respetamos el principio de entrenamiento más importante: LA INDIVIDUALIZACIÓN</h3>
+                    </div>
+                </div>
+                <div class="fade-in delay-1">
+                    <img src="img/centro.png" alt="Centro AP" style="border-radius: var(--border-radius);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN INFORMACIÓN CON IMAGEN -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="info-container">
+                <!-- Imagen a la izquierda -->
+                <div class="info-image fade-in">
+                    <img src="img/centro_blue.png" alt="Información AP" style="border-radius: var(--border-radius);">
+                </div>
+                
+                <!-- Texto a la derecha -->
+                <div class="info-text fade-in delay-1">
+                    <div class="text-left">
+                        <i class="fas fa-lightbulb service-icon" style="color: var(--accent-color);"></i>
+                        <h3 style="color: white;">En el apartado "SERVICIOS" se encuentran detallados todos ellos.</h3>
+                        <p style="color: white;"></pstyle>Puedes encontrar información sobre los entrenamientos online, presenciales grupales o individuales, nutrición, prueba de fuerza y mucho más.</p>
+                        
+                        <hr style="border: none; height: 2px; background: var(--accent-color); width: 50px; margin: var(--spacing-md) 0;">
+                        
+                        <p style="font-size: 1.1rem; font-weight: 600;">
+                            <strong style="color: white;">No dudes en escribirnos si tienes alguna duda o sugerencia.</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CERTIFICACIONES -->
+    <section class="section">
+        <div class="container">
+            <h3 class="text-center fade-in">Certificaciones</h3>
+            <div class="grid" style="margin-top: var(--spacing-xl);">
+                <div class="text-center fade-in">
+                    <img src="img/cert.png" alt="Certificación 1" style="height: 100px; margin: 0 auto;">
+                </div>
+                <div class="text-center fade-in delay-1">
+                    <img src="img/cert1.png" alt="Certificación 2" style="height: 100px; margin: 0 auto;">
+                </div>
+                <div class="text-center fade-in delay-2">
+                    <img src="img/cert2.png" alt="Certificación 3" style="height: 100px; margin: 0 auto;">
+                </div>
+                <div class="text-center fade-in delay-3">
+                    <img src="img/cert3.png" alt="Certificación 4" style="height: 100px; margin: 0 auto;">
+                </div>
+                <div class="text-center fade-in delay-3">
+                    <img src="img/cert4.png" alt="Certificación 4" style="height: 100px; margin: 0 auto;">
+                </div>                
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN REDES SOCIALES -->
+    <section class="section section-dark">
+        <div class="container text-center">
+            <h2 class="fade-in">Conéctate con nosotros</h2>
+            <div style="margin-top: var(--spacing-lg);" class="fade-in delay-1">
+                <a href="https://www.instagram.com/ap.nutrition_and_training" target="_blank" style="font-size: 2.5rem; color: var(--text-light); margin: 0 var(--spacing-sm);">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- Agrega más redes sociales aquí -->
+            </div>
+                    <div class="contact-form" style="background-color: #152349;">
+                        <h4>Escríbenos sin compromiso</h4>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Nombre*" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Correo electrónico*" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Mensaje*" required></textarea>
+                            </div>
+                            <button type="submit" class="btn" style="width: 100%;">Enviar</button>
+                            <p style="font-size: 0.8rem; color: #666; margin-top: var(--spacing-sm);">
+                                Este sitio está protegido por reCAPTCHA y aplican las 
+                                <a href="https://policies.google.com/privacy" target="_blank">Política de privacidad</a> y 
+                                <a href="https://policies.google.com/terms" target="_blank">Términos de servicio</a> de Google.
+                            </p>
+                        </form>
+                    </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+     <h1>borrar?</h1>
+    <section class="section" id="contacto">
+        <div class="container">
+            <div class="grid">
+                <div class="fade-in">
+                    <div class="contact-form">
+                        <h4>Escríbenos sin compromiso</h4>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Nombre*" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Correo electrónico*" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Mensaje*" required></textarea>
+                            </div>
+                            <button type="submit" class="btn" style="width: 100%;">Enviar</button>
+                            <p style="font-size: 0.8rem; color: #666; margin-top: var(--spacing-sm);">
+                                Este sitio está protegido por reCAPTCHA y aplican las 
+                                <a href="https://policies.google.com/privacy" target="_blank">Política de privacidad</a> y 
+                                <a href="https://policies.google.com/terms" target="_blank">Términos de servicio</a> de Google.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="fade-in delay-1">
+                    <h4>O, aún mejor, ¡ven a visitarnos!</h4>
+                    <p style="margin-bottom: var(--spacing-lg);">Nos encanta recibir a nuestros clientes, pide tu cita previa y ven a conocernos.</p>
+                    
+                    <a href="https://wa.me/34650751468" target="_blank" class="btn" style="background-color: #25D366; margin-bottom: var(--spacing-lg);">
+                        <i class="fab fa-whatsapp"></i> Nos adaptamos a ti, consúltanos
+                    </a>
+                    
+                    <h4>AP CLÍNICA DE NUTRICIÓN Y DIETÉTICA- ENTRENAMIENTO</h4>
+                    <p>Calle Maestro Dólera, 1º bis, 30600 Archena, Murcia, Spain</p>
+                    <p>Teléfono: <a href="tel:650751468">650751468</a></p>
+                    <p>Email: <a href="mailto:asesoramientoaperez@gmail.com">asesoramientoaperez@gmail.com</a></p>
+                    
+                    <div style="margin-top: var(--spacing-xl);">
+                        <h4>Horario</h4>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td><strong>lun - jue:</strong></td>
+                                <td>06:45 – 23:00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>vie:</strong></td>
+                                <td>06:45 – 20:00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>sáb:</strong></td>
+                                <td>Cita previa</td>
+                            </tr>
+                            <tr>
+                                <td><strong>dom:</strong></td>
+                                <td>Cerrado</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA -->
+    <div style="height: 400px; width: 100%;" class="fade-in">
+        <!-- Aquí puedes agregar un mapa de Google Maps -->
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.168716000456!2d-1.300000!3d37.933333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDU2JzAwLjAiTiAxwrAxOCcwMC4wIlc!5e0!3m2!1ses!2ses!4v1620000000000!5m2!1ses!2ses" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/sobre-ap">Sobre AP</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/nutricion">NUTRICIÓN</a></li>
+                        <li><a href="/entrenar-en-el-centro">ENTRENAR EN EL CENTRO</a></li>
+                        <li><a href="/ciclismo">CICLISMO</a></li>
+                        <li><a href="/du-triatlon">DU-TRIATLÓN</a></li>
+                        <li><a href="/corredores-trailrunners">CORREDORES / TRAILRUNNERS</a></li>
+                        <li><a href="/opositores">OPOSITORES</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Calle Maestro Dólera, 1º bis<br>
+                    30600 Archena, Murcia<br>
+                    Tel: 650751468<br>
+                    Email: asesoramientoaperez@gmail.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Horario</h4>
+                    <p>Lunes a Jueves: 6:45 - 23:00<br>
+                    Viernes: 6:45 - 20:00<br>
+                    Sábado: Cita previa<br>
+                    Domingo: Cerrado</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright © 2021 AP, Asesoramiento Personal Nutricional y Deportivo - Todos los derechos reservados.</p>
+                <p style="margin-top: var(--spacing-xs); font-size: 0.9rem;">
+                    Con tecnología de <a href="https://html5.com" target="_blank" style="color: var(--accent-color);">HTML5</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- COOKIE BANNER -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h4>Este sitio web utiliza cookies</h4>
+                <p>Usamos cookies para analizar el tráfico del sitio web y optimizar tu experiencia en el sitio. Al aceptar nuestro uso de cookies, tus datos se agruparán con los datos de todos los demás usuarios.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-decline" id="cookieDecline">Rechazar</button>
+                <button class="cookie-btn cookie-accept" id="cookieAccept">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT PRINCIPAL -->
+    <script>
+        // Cargar página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ocultar loader
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 500);
+            
+            // Menú móvil
+            const menuToggle = document.getElementById('menuToggle');
+            const navList = document.getElementById('navList');
+            
+            menuToggle.addEventListener('click', () => {
+                navList.classList.toggle('active');
+                menuToggle.innerHTML = navList.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Cerrar menú al hacer clic en enlace
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('active');
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            // Formulario de contacto
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Aquí puedes agregar el código para enviar el formulario
+                    // Por ejemplo, usando Formspree, EmailJS o tu propio backend
+                    
+                    alert('Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.');
+                    contactForm.reset();
+                });
+            }
+            
+            // Animaciones al hacer scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar elementos para animaciones
+            document.querySelectorAll('.service-card, .grid > div').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Cookie Banner
+            const cookieBanner = document.getElementById('cookieBanner');
+            const cookieAccept = document.getElementById('cookieAccept');
+            const cookieDecline = document.getElementById('cookieDecline');
+            
+            // Mostrar banner si no hay preferencia guardada
+            if (!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => {
+                    cookieBanner.classList.add('active');
+                }, 1000);
+            }
+            
+            cookieAccept.addEventListener('click', () => {
+                localStorage.setItem('cookiesAccepted', 'true');
+                cookieBanner.classList.remove('active');
+            });
+            
+            cookieDecline.addEventListener('click', () => {
+                localStorage.setItem('cookiesAccepted', 'false');
+                cookieBanner.classList.remove('active');
+            });
+            
+            // Smooth scroll para enlaces internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Detectar scroll para header
+        let lastScroll = 0;
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('scroll-up');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+                // Scroll hacia abajo
+                header.classList.remove('scroll-up');
+                header.classList.add('scroll-down');
+            } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+                // Scroll hacia arriba
+                header.classList.remove('scroll-down');
+                header.classList.add('scroll-up');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
