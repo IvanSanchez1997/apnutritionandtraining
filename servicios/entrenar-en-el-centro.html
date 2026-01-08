@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ENTRENAMIENTO PRESENCIAL - AP Nutricional y Deportivo</title>
+    <meta name="description" content="Entrenos dirigidos y personalizados en nuestro centro deportivo">
+    <meta name="author" content="AP, Centro de Asesoramiento Nutricional y Deportivo">
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700;900&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos principales (manteniendo los mismos de la página principal) -->
+    <style>
+        :root {
+            --primary-color: #152349;
+            --secondary-color: #0E1938;
+            --accent-color: #4D71D4;
+            --text-light: #FFFFFF;
+            --text-gray: #A5A9BF;
+            --text-dark: #152349;
+            --background-light: #F6F6F6;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-xxl: 72px;
+            --border-radius: 4px;
+            --box-shadow: 0 3px 6px 3px rgba(0,0,0,0.24);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.5rem; }
+        
+        @media (min-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.5rem; }
+            h3 { font-size: 2rem; }
+        }
+        
+        @media (min-width: 1024px) {
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 3rem; }
+        }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .section {
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .section-dark {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+        
+        .section-light {
+            background-color: var(--background-light);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.063em;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background-color: #3A5FC1;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-left {
+            text-align: left;
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        /* HEADER Y NAVEGACIÓN */
+        .header {
+            background-color: var(--secondary-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 100%;
+            margin: 0;
+            padding: 0 35px;
+            width: 100%;
+        }
+
+        .logo {
+            max-height: 70px;
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+        
+        .nav-link {
+            color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.063em;
+            padding: var(--spacing-xs) 0;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--primary-color);
+            min-width: 200px;
+            max-width: calc(100vw - 40px);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: var(--spacing-sm);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 1001;
+            box-sizing: border-box;
+        }
+
+        .nav-list li:last-child .dropdown-content,
+        .nav-list li:nth-last-child(2) .dropdown-content {
+            right: 0;
+            left: auto;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-link {
+            display: block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            color: var(--text-gray);
+        }
+        
+        .dropdown-link:hover {
+            color: var(--text-light);
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* SECCIÓN DE SERVICIOS DE ENTRENAMIENTO */
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-category {
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .service-category-title {
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-color);
+        }
+
+        .service-category-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: var(--spacing-xl);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .service-subcategory {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-lg);
+            font-size: 1.4rem;
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .price-note {
+            text-align: center;
+            color: var(--text-gray);
+            font-style: italic;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .service-item {
+            background: var(--text-light);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .service-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            white-space: nowrap;
+            margin-left: var(--spacing-md);
+        }
+
+        .service-description {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .service-description ul {
+            margin-top: var(--spacing-sm);
+        }
+
+        .service-description li {
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            padding-left: var(--spacing-md);
+        }
+
+        .service-description li:before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .separator {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: var(--spacing-lg) 0;
+            width: 100%;
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .footer-section h4 {
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-section ul li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .footer-section a {
+            color: var(--text-gray);
+        }
+        
+        .footer-section a:hover {
+            color: var(--text-light);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: var(--spacing-md);
+            text-align: center;
+            color: var(--text-gray);
+        }
+
+        /* WHATSAPP BUTTON */
+        .whatsapp-button {
+            position: fixed;
+            bottom: var(--spacing-lg);
+            right: var(--spacing-lg);
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: var(--spacing-xl);
+                transition: var(--transition);
+                z-index: 1002;
+                overflow-y: auto;
+            }
+            
+            .nav-list.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                font-size: 1.2rem;
+                padding: var(--spacing-sm) 0;
+                width: 100%;
+            }
+
+            .nav-list .dropdown-content {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                padding-left: var(--spacing-md);
+                display: none;
+                opacity: 1;
+                visibility: visible;
+                width: 100%;
+            }
+
+            .nav-list .dropdown.open .dropdown-content {
+                display: block;
+            }
+
+            .nav-list .dropdown.open > .nav-link i {
+                transform: rotate(180deg);
+                transition: transform 0.2s ease;
+            }
+
+            .service-header {
+                flex-direction: column;
+            }
+
+            .service-price {
+                margin-left: 0;
+                margin-top: var(--spacing-sm);
+            }
+
+            .section {
+                padding: var(--spacing-xl) 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-category-title {
+                font-size: 2rem;           /* Reduce tamaño solo en móvil */
+                line-height: 1.25;
+                word-break: break-word;   /* Permite salto natural de palabra */
+                padding: 0 10px;          /* Evita que roce los bordes */
+            }
+        }        
+
+        /* ANIMACIONES */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1.0s; }
+    </style>
+</head>
+<body>
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/34650751468" target="_blank" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="../index.html" class="logo">
+                <img src="../img/logo.png" alt="AP Nutricional y Deportivo" class="logo">
+            </a>
+
+            <!-- Navegación Desktop -->
+            <nav class="nav">
+                <ul class="nav-list" id="navList">
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <!-- <li><a href="../blog" class="nav-link">Blog</a></li> -->
+                    <li><a href="../sobre-ap.html" class="nav-link">Sobre AP</a></li>
+
+                    <!-- Dropdown Servicios -->
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="nutricion.html" class="dropdown-link">NUTRICIÓN</a>
+                            <a href="entrenar-en-el-centro.html" class="dropdown-link">ENTRENAR EN EL CENTRO</a>
+                            <a href="ciclismo.html" class="dropdown-link">CICLISMO</a>
+                            <a href="du-triatlon.html" class="dropdown-link">DU-TRIATLÓN</a>
+                            <a href="corredores-trailrunners.html" class="dropdown-link">CORREDORES / TRAILRUNNERS</a>
+                            <a href="opositores.html" class="dropdown-link">OPOSITORES</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <!-- Botón menú móvil -->
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL DE ENTRENAMIENTO -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="services-container">
+                <!-- Título principal -->
+                <div class="service-category">
+                    <h1 class="service-category-title fade-in">ENTRENAMIENTO PRESENCIAL</h1>
+                    <p class="service-category-subtitle fade-in delay-1">Entrenos dirigidos en el centro</p>
+                    <p class="price-note fade-in delay-1">*Precio por mes</p>
+                </div>
+
+                <!-- ENTRENAMIENTOS GRUPALES (Tipos 1-4) -->
+                <div class="service-category">
+                    <h3 class="service-subtitle text-center fade-in delay-1">Entrenamientos en grupo pequeño</h3>
+                    
+                    <!-- Tipo 1 -->
+                    <div class="service-item fade-in delay-1">
+                        <div class="service-header">
+                            <div>
+                                <h3 class="service-title">Tipo 1</h3>
+                            </div>
+                            <div class="service-price">95€</div>
+                        </div>
+                        <div class="service-description">
+                            <ul>
+                                <li>Sesión individual: Entrevista + valoración funcional.</li>
+                                <li>2 Sesiones de Entrenamiento PERSONAL a la semana (máximo 3 personas/hora con el entrenador).</li>
+                                <li>50% de descuento en los servicios de nutrición.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tipo 2 -->
+                    <div class="service-item fade-in delay-2">
+                        <div class="service-header">
+                            <div>
+                                <h3 class="service-title">Tipo 2</h3>
+                            </div>
+                            <div class="service-price">145€</div>
+                        </div>
+                        <div class="service-description">
+                            <ul>
+                                <li>Sesión individual: Entrevista + valoración funcional.</li>
+                                <li>3 Sesiones de Entrenamiento PERSONAL a la semana (máximo 3 personas/hora con el entrenador).</li>
+                                <li>Planificación de entrenamiento semana completa incluyendo días no presenciales.</li>
+                                <li>50% de descuento en los servicios de nutrición.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tipo 3 -->
+                    <div class="service-item fade-in delay-3">
+                        <div class="service-header">
+                            <div>
+                                <h3 class="service-title">Tipo 3</h3>
+                            </div>
+                            <div class="service-price">195€</div>
+                        </div>
+                        <div class="service-description">
+                            <ul>
+                                <li>Sesión individual: Entrevista + valoración funcional.</li>
+                                <li>4 Sesiones de Entrenamiento PERSONAL a la semana (máximo 4 personas/hora).</li>
+                                <li>Planificación de entrenamiento semana completa incluyendo días no presenciales.</li>
+                                <li>50% de descuento en los servicios de nutrición.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separator"></div>
+
+                <!-- SESIONES INDIVIDUALES + NUTRICIÓN (Tipos 1-6) -->
+                <div class="service-category">
+                    <h3 class="service-subtitle text-center fade-in delay-2">Sesiones Individuales + Nutrición</h3>
+                    
+                    <!-- Tipo 1 -->
+                    <div class="service-item fade-in delay-1">
+                        <div class="service-header">
+                            <div>
+                                <h3 class="service-title">Tipo 1</h3>
+                            </div>
+                            <div class="service-price">170€</div>
+                        </div>
+                        <div class="service-description">
+                            <ul>
+                                <li>Sesión individual: Entrevista + valoración funcional.</li>
+                                <li>1 Sesión de Entrenamiento INDIVIDUAL personal a la semana.</li>
+                                <li>Planificación de entrenamiento semana completa incluyendo días no presenciales.</li>
+                                <li>Planificación nutricional completa.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tipo 2 -->
+                    <div class="service-item fade-in delay-2">
+                        <div class="service-header">
+                            <div>
+                                <h3 class="service-title">Tipo 2</h3>
+                            </div>
+                            <div class="service-price">240€</div>
+                        </div>
+                        <div class="service-description">
+                            <ul>
+                                <li>Sesión individual: Entrevista + valoración funcional.</li>
+                                <li>2 Sesiones de Entrenamiento INDIVIDUAL personal a la semana.</li>
+                                <li>Planificación de entrenamiento semana completa incluyendo días no presenciales.</li>
+                                <li>Planificación nutricional completa.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tipo 3 -->
+                    <div class="service-item fade-in delay-3">
+                        <div class="service-header">
+                            <div>
+                                <h3 class="service-title">Tipo 3</h3>
+                            </div>
+                            <div class="service-price">310€</div>
+                        </div>
+                        <div class="service-description">
+                            <ul>
+                                <li>Sesión individual: Entrevista + valoración funcional.</li>
+                                <li>3 Sesiones de Entrenamiento INDIVIDUAL personal a la semana.</li>
+                                <li>Planificación de entrenamiento semana completa incluyendo días no presenciales.</li>
+                                <li>Planificación nutricional completa.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tipo 4 -->
+                    <div class="service-item fade-in delay-4">
+                        <div class="service-header">
+                            <div>
+                                <h3 class="service-title">Tipo 4</h3>
+                            </div>
+                            <div class="service-price">380€</div>
+                        </div>
+                        <div class="service-description">
+                            <ul>
+                                <li>Sesión individual: Entrevista + valoración funcional.</li>
+                                <li>4 Sesiones de Entrenamiento INDIVIDUAL personal a la semana.</li>
+                                <li>Planificación de entrenamiento semana completa incluyendo días no presenciales.</li>
+                                <li>Planificación nutricional completa.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tipo 5 -->
+                    <div class="service-item fade-in delay-5">
+                        <div class="service-header">
+                            <div>
+                                <h3 class="service-title">Tipo 5</h3>
+                            </div>
+                            <div class="service-price">450€</div>
+                        </div>
+                        <div class="service-description">
+                            <ul>
+                                <li>Sesión individual: Entrevista + valoración funcional.</li>
+                                <li>5 Sesiones de Entrenamiento INDIVIDUAL personal a la semana.</li>
+                                <li>Planificación de entrenamiento semana completa incluyendo días no presenciales.</li>
+                                <li>Planificación nutricional completa.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separator"></div>
+
+                <!-- SERVICIOS ADICIONALES -->
+                <div class="service-category">
+                    <h3 class="service-subtitle text-center fade-in delay-3">Servicios Adicionales</h3>
+                    
+                    <!-- Sesión individual -->
+                    <div class="service-item fade-in delay-1">
+                        <div class="service-header">
+                            <div>
+                                <h3 class="service-title">Sesión de entrenamiento individual</h3>
+                            </div>
+                            <div class="service-price">25€ / hora</div>
+                        </div>
+                    </div>
+
+                    <!-- Bono 10 sesiones -->
+                    <div class="service-item fade-in delay-2">
+                        <div class="service-header">
+                            <div>
+                                <h3 class="service-title">Bono 10 sesiones de Entrenamiento individual</h3>
+                            </div>
+                            <div class="service-price">230€</div>
+                        </div>
+                    </div>
+
+                    <!-- Evaluación Test de fuerza -->
+                    <div class="service-item fade-in delay-3">
+                        <div class="service-header">
+                            <div>
+                                <h3 class="service-title">Evaluación Test de fuerza</h3>
+                            </div>
+                            <div class="service-price">50€</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTÓN DE WHATSAPP -->
+    <section class="section section-dark text-center">
+        <div class="container">
+            <h3 class="fade-in">¿Quieres empezar a entrenar con nosotros?</h3>
+            <p class="fade-in delay-1" style="margin-bottom: var(--spacing-lg);">Contáctanos y te asesoraremos sobre el plan que mejor se adapte a ti</p>
+            <a href="https://wa.me/34650751468" target="_blank" class="btn fade-in delay-2" style="background-color: #25D366;">
+                <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <!--<li><a href="../blog">Blog</a></li>-->
+                        <li><a href="../sobre-ap.html">Sobre AP</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="nutricion.html">NUTRICIÓN</a></li>
+                        <li><a href="entrenar-en-el-centro.html">ENTRENAR EN EL CENTRO</a></li>
+                        <li><a href="ciclismo.html">CICLISMO</a></li>
+                        <li><a href="du-triatlon.html">DU-TRIATLÓN</a></li>
+                        <li><a href="corredores-trailrunners.html">CORREDORES / TRAILRUNNERS</a></li>
+                        <li><a href="opositores.html">OPOSITORES</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Calle Maestro Dólera, 1º bis<br>
+                    30600 Archena, Murcia<br>
+                    Tel: 650751468<br>
+                    Email: asesoramientoaperez@gmail.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Horario</h4>
+                    <p>Lunes a Jueves: 6:45 - 23:00<br>
+                    Viernes: 6:45 - 20:00<br>
+                    Sábado: Cita previa<br>
+                    Domingo: Cerrado</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright © 2026 AP, Asesoramiento Personal Nutricional y Deportivo - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PRINCIPAL -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menú móvil
+            const menuToggle = document.getElementById('menuToggle');
+            const navList = document.getElementById('navList');
+            
+            menuToggle.addEventListener('click', () => {
+                navList.classList.toggle('active');
+                menuToggle.innerHTML = navList.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Cerrar menú al hacer clic en enlace
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const parentDropdown = link.parentElement;
+                    const navIsMobile = navList.classList.contains('active') || window.innerWidth <= 768;
+
+                    if (parentDropdown.classList.contains('dropdown') && navIsMobile) {
+                        e.preventDefault();
+                        parentDropdown.classList.toggle('open');
+                        return;
+                    }
+
+                    navList.classList.remove('active');
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+
+            // Close open dropdowns when clicking outside nav (mobile)
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav') && !e.target.closest('.menu-toggle')) {
+                    document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+                }
+            });
+            
+            // Animaciones al hacer scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar elementos para animaciones
+            document.querySelectorAll('.service-item, .service-category-title, .service-category-subtitle, .price-note, .service-subtitle').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

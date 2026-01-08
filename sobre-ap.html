@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sobre AP | AP Nutricional y Deportivo</title>
+    <meta name="description" content="Conoce más sobre AP, nuestra misión, el equipo y nuestras publicaciones científicas">
+    <meta name="author" content="AP, Centro de Asesoramiento Nutricional y Deportivo">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://apnutricionalydeportivo.com/sobre-ap">
+    <meta property="og:title" content="Sobre AP | Centro de Asesoramiento Nutricional y Deportivo">
+    <meta property="og:description" content="Conoce nuestra misión, equipo y publicaciones científicas">
+    <meta property="og:image" content="https://tuservidor.com/sinfondologoasesoriamientoaperez.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sobre AP | Centro de Asesoramiento Nutricional y Deportivo">
+    <meta name="twitter:description" content="Conoce más sobre AP">
+    <meta name="twitter:image" content="https://tuservidor.com/sinfondologoasesoriamientoaperez.png">
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos principales -->
+    <style>
+        /* Variables y estilos base de la página principal */
+        :root {
+            --primary-color: #152349;
+            --secondary-color: #0E1938;
+            --accent-color: #4D71D4;
+            --text-light: #FFFFFF;
+            --text-gray: #A5A9BF;
+            --text-dark: #152349;
+            --background-light: #F6F6F6;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-xxl: 72px;
+            --border-radius: 4px;
+            --box-shadow: 0 3px 6px 3px rgba(0,0,0,0.24);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.5rem; }
+        
+        @media (min-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.5rem; }
+            h3 { font-size: 2rem; }
+        }
+        
+        @media (min-width: 1024px) {
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 3rem; }
+        }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .section {
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .section-dark {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+        
+        .section-light {
+            background-color: var(--background-light);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.063em;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background-color: #3A5FC1;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-left {
+            text-align: left;
+        }
+        
+        .text-right {
+            text-align: right;
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        /* HEADER Y NAVEGACIÓN */
+        .header {
+            background-color: var(--secondary-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 100%;
+            margin: 0;
+            padding: 0 35px;
+            width: 100%;
+        }
+
+        .logo {
+            max-height: 70px;
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+        
+        .nav-link {
+            color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.063em;
+            padding: var(--spacing-xs) 0;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--primary-color);
+            min-width: 200px;
+            max-width: calc(100vw - 40px);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: var(--spacing-sm);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 1001;
+            box-sizing: border-box;
+        }
+
+        .nav-list li:last-child .dropdown-content,
+        .nav-list li:nth-last-child(2) .dropdown-content {
+            right: 0;
+            left: auto;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-link {
+            display: block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            color: var(--text-gray);
+        }
+        
+        .dropdown-link:hover {
+            color: var(--text-light);
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* ESTILOS ESPECÍFICOS PARA PÁGINA "SOBRE AP" */
+        .about-hero {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: var(--spacing-xxl) 0;
+            text-align: center;
+        }
+        
+        .about-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-light);
+        }
+        
+        .about-content {
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .about-section {
+            margin-bottom: var(--spacing-xxl);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .about-grid.reverse {
+                direction: rtl;
+            }
+            
+            .about-grid.reverse > * {
+                direction: ltr;
+            }
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .about-text h3 {
+            color: var(--primary-color);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .about-text h4 {
+            color: var(--primary-color);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .about-text ul {
+            padding-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .about-text li {
+            list-style: disc;
+            margin-bottom: var(--spacing-xs);
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .about-text strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .about-text u {
+            text-decoration: underline;
+        }
+        
+        /* Publicaciones científicas */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+.publication-item {
+    border: 1px solid rgba(21, 35, 73, 0.08);   /* borde muy sutil */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);    /* sombra base visible */
+    cursor: pointer;                           /* indica interactividad */
+    transition: all 0.3s ease;
+}
+        
+.publication-item:hover {
+    border-color: rgba(77, 113, 212, 0.35);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    transform: translateY(-6px);
+}
+        
+        .publication-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;   /* <- Se adapta sin deformarse */
+            background-color: #fff; /* opcional: relleno limpio si la imagen no ocupa todo */
+        }
+        
+        .publication-content {
+            padding: var(--spacing-md);
+        }
+        
+        .publication-content h4 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* FOOTER */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .footer-section h4 {
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-section ul li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .footer-section a {
+            color: var(--text-gray);
+        }
+        
+        .footer-section a:hover {
+            color: var(--text-light);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: var(--spacing-md);
+            text-align: center;
+            color: var(--text-gray);
+        }
+        
+        /* WHATSAPP BUTTON */
+        .whatsapp-button {
+            position: fixed;
+            bottom: var(--spacing-lg);
+            right: var(--spacing-lg);
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: var(--spacing-xl);
+                transition: var(--transition);
+                z-index: 1002;
+                overflow-y: auto;
+            }
+            
+            .nav-list.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                font-size: 1.2rem;
+                padding: var(--spacing-sm) 0;
+                width: 100%;
+            }
+
+            .nav-list .dropdown-content {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                padding-left: var(--spacing-md);
+                display: none;
+                opacity: 1;
+                visibility: visible;
+                width: 100%;
+            }
+
+            .nav-list .dropdown.open .dropdown-content {
+                display: block;
+            }
+
+            .nav-list .dropdown.open > .nav-link i {
+                transform: rotate(180deg);
+                transition: transform 0.2s ease;
+            }
+
+            .section {
+                padding: var(--spacing-xl) 0;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .publications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ANIMACIONES */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/34650751468" target="_blank" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <img src="img/logo.png" alt="AP Nutricional y Deportivo" class="logo">
+            </a>
+
+            <!-- Navegación Desktop -->
+            <nav class="nav">
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <!-- <li><a href="/blog" class="nav-link">Blog</a></li> -->
+                    <li><a href="/sobre-ap" class="nav-link active">Sobre AP</a></li>
+                    
+                    <!-- Dropdown Servicios -->
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="servicios/nutricion" class="dropdown-link">NUTRICIÓN</a>
+                            <a href="servicios/entrenar-en-el-centro" class="dropdown-link">ENTRENAR EN EL CENTRO</a>
+                            <a href="servicios/ciclismo" class="dropdown-link">CICLISMO</a>
+                            <a href="servicios/du-triatlon" class="dropdown-link">DU-TRIATLÓN</a>
+                            <a href="servicios/corredores-trailrunners" class="dropdown-link">CORREDORES / TRAILRUNNERS</a>
+                            <a href="servicios/opositores" class="dropdown-link">OPOSITORES</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <!-- Botón menú móvil -->
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="about-hero">
+        <div class="container">
+            <h1 class="fade-in">Sobre AP</h1>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="about-content">
+        <div class="container">
+            <!-- Sección 1: ¿QUÉ ES? -->
+            <section class="about-section fade-in">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="img/centro1.png" alt="¿Qué es AP?">
+                    </div>
+                    <div class="about-text">
+                        <h3>¿QUÉ ES?</h3>
+                        <p>AP es una CLÍNICA DE <strong>NUTRICIÓN Y DIETÉTICA</strong> y un CENTRO DE ENTRENAMIENTO <strong>DEPORTIVO PERSONAL</strong> donde se realizan valoraciones a nivel <strong>individual</strong> y prescribimos, tendiendo en cuenta tus características y necesidades particulares. Sacando tu máximo <strong>potencial</strong> para que alcances tus objetivos a través del deporte y una correcta alimentación.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 2: Sobre Andrés Pérez Hernández -->
+            <section class="about-section fade-in delay-1">
+                <div class="about-grid reverse">
+                    <div class="about-image">
+                        <img src="img/centro2.png" alt="Andrés Pérez Hernández">
+                    </div>
+                    <div class="about-text">
+                        <h3>Sobre Andrés Pérez Hernández</h3>
+                        <p>Me considero un apasionado de la fisiología del cuerpo sobre ejercicio y la aplicabilidad práctica al entrenamiento y nutrición.</p>
+                        
+                        <h4><u><strong>FORMACIÓN</strong></u> <strong>académica más relevante</strong></h4>
+                        <ul>
+                            <li>Graduado en Ciencias de la Actividad Física y el Deporte.</li>
+                            <li>Graduado en Nutrición Humana y Dietética.</li>
+                            <li>Máster Oficial en Alto rendimiento.</li>
+                            <li>Entrenador personal certificado NSCA-CPT.</li>
+                            <li>Certified Strength & Conditioning Specialist. CSCS.</li>
+                            <li>EXOS Performance Specialist.</li>
+                            <li>Certificación Internacional en Cinematropometría.</li>
+                            <li>Entrenador Nacional de Triatlón.</li>
+                            <li>Curso Universitario Entrenador personal.</li>
+                        </ul>
+                        
+                        <p>Experiencia como entrenador desde hace más de 8 años, con ciclistas, triatletas y corredores de diferentes niveles en cuanto a rendimiento deportivo. Además, llevo muchos años dedicados a la investigación y el estudio de las Ciencias del Deporte en sus diferentes ámbitos, especialmente con deportistas de resistencia.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 3: Publicaciones científicas -->
+            <section class="about-section fade-in delay-2">
+                <h3 class="text-center">PUBLICACIONES CIENTÍFICAS MÁS RELEVANTES</h3>
+                
+                <div class="publications-grid">
+                    <!-- Publicación 1 -->
+                    <div class="publication-item">
+                        <a href="https://journals.humankinetics.com/view/journals/ijspp/15/3/article-p375.xml" target="_blank" rel="noopener">
+                            <img src="img/ciencia.png" alt="International Journal of Sports Physiology and Performance" class="publication-image">
+                            <div class="publication-content">
+                                <h4>International Journal of Sports Physiology and Performance</h4>
+                                <p><strong>ISSN:</strong> 1956-0058 (Print), 1956-0273 (Online)</p>
+                                <p>Impact of Caffeine Intake on 800-m Running Performance and Sleep Quality in Trained Runners</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Publicación 2 -->
+                    <div class="publication-item">
+                        <a href="https://www.mdpi.com/2072-6643/11/9/2040" target="_blank" rel="noopener">
+                            <img src="img/ciencia1.png" alt="Nutrients Journal" class="publication-image">
+                            <div class="publication-content">
+                                <h4>Nutrients Journal</h4>
+                                <p><strong>ISSN:</strong> 2072-6643</p>
+                                <p>Effects of Beetroot Juice Supplementation on Performance and Fatigue in a 30-s All-Out Sprint Exercise</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Publicación 3 -->
+                    <div class="publication-item">
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0031938419303671" target="_blank" rel="noopener">
+                            <img src="img/ciencia2.png" alt="Physiology & Behavior" class="publication-image">
+                            <div class="publication-content">
+                                <h4>Physiology & Behavior</h4>
+                                <p><strong>ISSN:</strong> 0031-9384</p>
+                                <p>Caffeine Improves Physical Performance in Female Soccer Players</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Publicación 4 -->
+                    <div class="publication-item">
+                        <a href="https://www.tandfonline.com/doi/abs/10.1080/17461391.2018.1539124" target="_blank" rel="noopener">
+                            <img src="img/ciencia3.png" alt="European Journal of Sport Science" class="publication-image">
+                            <div class="publication-content">
+                                <h4>European Journal of Sport Science</h4>
+                                <p><strong>ISSN:</strong> 1746-1391</p>
+                                <p>Effects of Acute Caffeine Intake on Performance and Perceptual Responses in Repeated Sprint Ability Test</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <!-- <li><a href="/blog">Blog</a></li> -->
+                        <li><a href="sobre-ap.html">Sobre AP</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/nutricion">NUTRICIÓN</a></li>
+                        <li><a href="/entrenar-en-el-centro">ENTRENAR EN EL CENTRO</a></li>
+                        <li><a href="/ciclismo">CICLISMO</a></li>
+                        <li><a href="/du-triatlon">DU-TRIATLÓN</a></li>
+                        <li><a href="/corredores-trailrunners">CORREDORES / TRAILRUNNERS</a></li>
+                        <li><a href="/opositores">OPOSITORES</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Calle Maestro Dólera, 1º bis<br>
+                    30600 Archena, Murcia<br>
+                    Tel: 650751468<br>
+                    Email: asesoramientoaperez@gmail.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Horario</h4>
+                    <p>Lunes a Jueves: 6:45 - 23:00<br>
+                    Viernes: 6:45 - 20:00<br>
+                    Sábado: Cita previa<br>
+                    Domingo: Cerrado</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright © 2026 AP, Asesoramiento Personal Nutricional y Deportivo - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PRINCIPAL -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menú móvil
+            const menuToggle = document.getElementById('menuToggle');
+            const navList = document.getElementById('navList');
+            
+            menuToggle.addEventListener('click', () => {
+                navList.classList.toggle('active');
+                menuToggle.innerHTML = navList.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Cerrar menú al hacer clic en enlace
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const parentDropdown = link.parentElement;
+                    const navIsMobile = navList.classList.contains('active') || window.innerWidth <= 768;
+
+                    if (parentDropdown.classList.contains('dropdown') && navIsMobile) {
+                        e.preventDefault();
+                        parentDropdown.classList.toggle('open');
+                        return;
+                    }
+
+                    navList.classList.remove('active');
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+
+            // Close open dropdowns when clicking outside nav (mobile)
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav') && !e.target.closest('.menu-toggle')) {
+                    document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+                }
+            });
+            
+            // Animaciones al hacer scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar elementos para animaciones
+            document.querySelectorAll('.about-section, .publication-item').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Smooth scroll para enlaces internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Detectar scroll para header
+        let lastScroll = 0;
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('scroll-up');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+                header.classList.remove('scroll-up');
+                header.classList.add('scroll-down');
+            } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+                header.classList.remove('scroll-down');
+                header.classList.add('scroll-up');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>

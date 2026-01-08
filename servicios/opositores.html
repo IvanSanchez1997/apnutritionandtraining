@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OPOSITORES - AP Nutricional y Deportivo</title>
+    <meta name="description" content="Planes de entrenamiento y nutrición especializados para opositores">
+    <meta name="author" content="AP, Centro de Asesoramiento Nutricional y Deportivo">
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700;900&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos principales (manteniendo los mismos de la página principal) -->
+    <style>
+        :root {
+            --primary-color: #152349;
+            --secondary-color: #0E1938;
+            --accent-color: #4D71D4;
+            --text-light: #FFFFFF;
+            --text-gray: #A5A9BF;
+            --text-dark: #152349;
+            --background-light: #F6F6F6;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-xxl: 72px;
+            --border-radius: 4px;
+            --box-shadow: 0 3px 6px 3px rgba(0,0,0,0.24);
+            --transition: all 0.3s ease;
+            --plan-bronze: #CD7F32;
+            --plan-complete: #4D71D4;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.5rem; }
+        
+        @media (min-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.5rem; }
+            h3 { font-size: 2rem; }
+        }
+        
+        @media (min-width: 1024px) {
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 3rem; }
+        }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .section {
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .section-dark {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+        
+        .section-light {
+            background-color: var(--background-light);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.063em;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background-color: #3A5FC1;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-left {
+            text-align: left;
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        /* HEADER Y NAVEGACIÓN */
+        .header {
+            background-color: var(--secondary-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 100%;
+            margin: 0;
+            padding: 0 35px;
+            width: 100%;
+        }
+
+        .logo {
+            max-height: 70px;
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+        
+        .nav-link {
+            color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.063em;
+            padding: var(--spacing-xs) 0;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--primary-color);
+            min-width: 200px;
+            max-width: calc(100vw - 40px);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: var(--spacing-sm);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 1001;
+            box-sizing: border-box;
+        }
+
+        .nav-list li:last-child .dropdown-content,
+        .nav-list li:nth-last-child(2) .dropdown-content {
+            right: 0;
+            left: auto;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-link {
+            display: block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            color: var(--text-gray);
+        }
+        
+        .dropdown-link:hover {
+            color: var(--text-light);
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* SECCIÓN DE PLANES PARA OPOSITORES */
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-category {
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .service-category-title {
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-color);
+        }
+
+        .service-category-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: var(--spacing-xl);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .price-note {
+            text-align: center;
+            color: var(--text-gray);
+            font-style: italic;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        /* PLANES DE ENTRENAMIENTO */
+        .plan-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .plan-card {
+            background: var(--text-light);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-xl);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .plan-card.bronze {
+            border-top: 4px solid var(--plan-bronze);
+        }
+
+        .plan-card.complete {
+            border-top: 4px solid var(--plan-complete);
+        }
+
+        .plan-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .plan-name {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .plan-modality {
+            display: inline-block;
+            background-color: rgba(77, 113, 212, 0.1);
+            color: var(--accent-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .plan-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .plan-card.bronze .plan-price {
+            color: var(--plan-bronze);
+        }
+
+        .plan-card.complete .plan-price {
+            color: var(--plan-complete);
+        }
+
+        .price-period {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .plan-features {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .plan-features ul {
+            margin-top: var(--spacing-sm);
+        }
+
+        .plan-features li {
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            padding-left: var(--spacing-md);
+            line-height: 1.5;
+        }
+
+        .plan-features li:before {
+            content: "✓";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .plan-features .includes-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            display: block;
+        }
+
+        /* SERVICIOS ADICIONALES */
+        .additional-services {
+            margin-top: var(--spacing-xxl);
+        }
+
+        .additional-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-lg);
+            font-size: 1.8rem;
+        }
+
+        .additional-services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .additional-service {
+            background: var(--text-light);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .additional-service:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .additional-service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .additional-service-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .additional-service-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            white-space: nowrap;
+            margin-left: var(--spacing-md);
+        }
+
+        .additional-service-description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .additional-service-list {
+            margin-top: var(--spacing-sm);
+        }
+
+        .additional-service-list li {
+            margin-bottom: var(--spacing-xs);
+            position: relative;
+            padding-left: var(--spacing-md);
+        }
+
+        .additional-service-list li:before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .compatibility-note {
+            text-align: center;
+            margin-top: var(--spacing-lg);
+            color: var(--text-gray);
+            font-style: italic;
+        }
+
+        /* ESPECIAL OPOSITORES */
+        .opositor-highlights {
+            background-color: rgba(77, 113, 212, 0.05);
+            border-left: 4px solid var(--accent-color);
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+            border-radius: var(--border-radius);
+        }
+
+        .opositor-highlights h4 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .opositor-highlights ul {
+            margin-top: var(--spacing-sm);
+        }
+
+        .opositor-highlights li {
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            padding-left: var(--spacing-md);
+        }
+
+        .opositor-highlights li:before {
+            content: "→";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .footer-section h4 {
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-section ul li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .footer-section a {
+            color: var(--text-gray);
+        }
+        
+        .footer-section a:hover {
+            color: var(--text-light);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: var(--spacing-md);
+            text-align: center;
+            color: var(--text-gray);
+        }
+
+        /* WHATSAPP BUTTON */
+        .whatsapp-button {
+            position: fixed;
+            bottom: var(--spacing-lg);
+            right: var(--spacing-lg);
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: var(--spacing-xl);
+                transition: var(--transition);
+                z-index: 1002;
+                overflow-y: auto;
+            }
+            
+            .nav-list.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                font-size: 1.2rem;
+                padding: var(--spacing-sm) 0;
+                width: 100%;
+            }
+
+            .nav-list .dropdown-content {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                padding-left: var(--spacing-md);
+                display: none;
+                opacity: 1;
+                visibility: visible;
+                width: 100%;
+            }
+
+            .nav-list .dropdown.open .dropdown-content {
+                display: block;
+            }
+
+            .nav-list .dropdown.open > .nav-link i {
+                transform: rotate(180deg);
+                transition: transform 0.2s ease;
+            }
+
+            .plan-container {
+                grid-template-columns: 1fr;
+            }
+
+            .additional-service-header {
+                flex-direction: column;
+            }
+
+            .additional-service-price {
+                margin-left: 0;
+                margin-top: var(--spacing-sm);
+            }
+
+            .section {
+                padding: var(--spacing-xl) 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-category-title {
+                font-size: 2rem;           /* Reduce tamaño solo en móvil */
+                line-height: 1.25;
+                word-break: break-word;   /* Permite salto natural de palabra */
+                padding: 0 10px;          /* Evita que roce los bordes */
+            }
+        }        
+
+        /* ANIMACIONES */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+    </style>
+</head>
+<body>
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/34650751468" target="_blank" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="../index.html" class="logo">
+                <img src="../img/logo.png" alt="AP Nutricional y Deportivo" class="logo">
+            </a>
+
+            <!-- Navegación Desktop -->
+            <nav class="nav">
+                <ul class="nav-list" id="navList">
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <!-- <li><a href="../blog" class="nav-link">Blog</a></li> -->
+                    <li><a href="../sobre-ap.html" class="nav-link">Sobre AP</a></li>
+
+                    <!-- Dropdown Servicios -->
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="nutricion.html" class="dropdown-link">NUTRICIÓN</a>
+                            <a href="entrenar-en-el-centro.html" class="dropdown-link">ENTRENAR EN EL CENTRO</a>
+                            <a href="ciclismo.html" class="dropdown-link">CICLISMO</a>
+                            <a href="du-triatlon.html" class="dropdown-link">DU-TRIATLÓN</a>
+                            <a href="corredores-trailrunners.html" class="dropdown-link">CORREDORES / TRAILRUNNERS</a>
+                            <a href="opositores.html" class="dropdown-link">OPOSITORES</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <!-- Botón menú móvil -->
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL PARA OPOSITORES -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="services-container">
+                <!-- Título principal -->
+                <div class="service-category">
+                    <h1 class="service-category-title fade-in">OPOSITORES</h1>
+                    <p class="price-note fade-in delay-1">*Precio por mes</p>
+                </div>
+
+                <!-- PLANES DE ENTRENAMIENTO -->
+                <div class="plan-container">
+                    <!-- Plan Bronce -->
+                    <div class="plan-card bronze fade-in">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Plan Bronce</h3>
+                            <div class="plan-modality">Modalidad Online</div>
+                            <div class="plan-price">65€</div>
+                            <div class="price-period">por mes</div>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li>Valoración Inicial (60-90 min)</li>
+                                <li>Planificación Semanal/Quincenal</li>
+                                <li>Comunicación llamadas concertadas y WhatsApp</li>
+                                <li>Cambios en planificación por cualquier motivo</li>
+                                <li>Análisis HRV</li>
+                                <li>50% de descuento en antropometría</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Plan Entreno y Nutrición -->
+                    <div class="plan-card complete fade-in delay-1">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Plan Entreno y Nutrición</h3>
+                            <div class="plan-modality">Modalidad Online</div>
+                            <div class="plan-price">100€</div>
+                            <div class="price-period">por mes</div>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li><span class="includes-title">Incluye Plan Bronce +</span></li>
+                                <li>Valoración Nutricional</li>
+                                <li>Planificación nutrición</li>
+                                <li>Planificación Ayudas ergogénicas</li>
+                                <li>Incluye 2 Antropometrías al año (resto a precio reducido)</li>
+                                <li>Otros servicios a precio reducido</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SERVICIOS ADICIONALES -->
+                <div class="additional-services">
+                    <h3 class="additional-title fade-in delay-2">Servicios Adicionales para Opositores</h3>
+                    
+                    <div class="additional-services-container">
+                        <!-- Antropometría -->
+                        <div class="additional-service fade-in delay-1">
+                            <div class="additional-service-header">
+                                <div>
+                                    <h4 class="additional-service-title">Antropometría Completa</h4>
+                                </div>
+                                <div class="additional-service-price">30€</div>
+                            </div>
+                            <div class="additional-service-description">
+                                <p>Evaluación detallada de la composición corporal para optimizar el rendimiento físico durante el periodo de oposición.</p>
+                            </div>
+                        </div>
+
+                        <!-- Valoración específica -->
+                        <div class="additional-service fade-in delay-2">
+                            <div class="additional-service-header">
+                                <div>
+                                    <h4 class="additional-service-title">Valoración Funcional Específica</h4>
+                                </div>
+                                <div class="additional-service-price">50€</div>
+                            </div>
+                            <div class="additional-service-description">
+                                <p>Evaluación de capacidades físicas específicas para pruebas físicas de oposiciones (fuerza, resistencia, velocidad).</p>
+                            </div>
+                        </div>
+
+                        <!-- Plan nutricional específico -->
+                        <div class="additional-service fade-in delay-3">
+                            <div class="additional-service-header">
+                                <div>
+                                    <h4 class="additional-service-title">Plan Nutricional para Opositores</h4>
+                                </div>
+                                <div class="additional-service-price">55€</div>
+                            </div>
+                            <div class="additional-service-description">
+                                <p>Planificación nutricional adaptada a las largas horas de estudio y entrenamiento específico para pruebas físicas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN ESPECIAL PARA OPOSITORES -->
+                <div class="opositor-highlights fade-in delay-3">
+                    <h4>Beneficios específicos para opositores</h4>
+                    <p>Nuestros planes están especialmente diseñados para adaptarse a las necesidades únicas de los opositores:</p>
+                    <ul>
+                        <li><strong>Flexibilidad horaria:</strong> Planificación adaptable a tus horarios de estudio</li>
+                        <li><strong>Gestión del estrés:</strong> Entrenamientos diseñados para reducir el estrés y mejorar la concentración</li>
+                        <li><strong>Optimización del tiempo:</strong> Rutinas eficientes que maximizan resultados en mínimo tiempo</li>
+                        <li><strong>Preparación específica:</strong> Enfoque en las pruebas físicas específicas de cada oposición</li>
+                        <li><strong>Seguimiento constante:</strong> Acompañamiento durante todo el proceso de preparación</li>
+                    </ul>
+                </div>
+
+                <p class="compatibility-note fade-in delay-4">Todos los servicios adicionales son compatibles con cualquiera de los planes principales.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTÓN DE WHATSAPP -->
+    <section class="section section-dark text-center">
+        <div class="container">
+            <h3 class="fade-in">¿Preparando oposiciones y necesitas optimizar tu rendimiento físico?</h3>
+            <p class="fade-in delay-1" style="margin-bottom: var(--spacing-lg);">Te ayudamos a combinar estudio y entrenamiento de forma eficiente</p>
+            <a href="https://wa.me/34650751468" target="_blank" class="btn fade-in delay-2" style="background-color: #25D366;">
+                <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <!--<li><a href="../blog">Blog</a></li>-->
+                        <li><a href="../sobre-ap.html">Sobre AP</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="nutricion.html">NUTRICIÓN</a></li>
+                        <li><a href="entrenar-en-el-centro.html">ENTRENAR EN EL CENTRO</a></li>
+                        <li><a href="ciclismo.html">CICLISMO</a></li>
+                        <li><a href="du-triatlon.html">DU-TRIATLÓN</a></li>
+                        <li><a href="corredores-trailrunners.html">CORREDORES / TRAILRUNNERS</a></li>
+                        <li><a href="opositores.html">OPOSITORES</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Calle Maestro Dólera, 1º bis<br>
+                    30600 Archena, Murcia<br>
+                    Tel: 650751468<br>
+                    Email: asesoramientoaperez@gmail.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Horario</h4>
+                    <p>Lunes a Jueves: 6:45 - 23:00<br>
+                    Viernes: 6:45 - 20:00<br>
+                    Sábado: Cita previa<br>
+                    Domingo: Cerrado</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright © 2026 AP, Asesoramiento Personal Nutricional y Deportivo - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PRINCIPAL -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menú móvil
+            const menuToggle = document.getElementById('menuToggle');
+            const navList = document.getElementById('navList');
+            
+            menuToggle.addEventListener('click', () => {
+                navList.classList.toggle('active');
+                menuToggle.innerHTML = navList.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Cerrar menú al hacer clic en enlace
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const parentDropdown = link.parentElement;
+                    const navIsMobile = navList.classList.contains('active') || window.innerWidth <= 768;
+
+                    if (parentDropdown.classList.contains('dropdown') && navIsMobile) {
+                        e.preventDefault();
+                        parentDropdown.classList.toggle('open');
+                        return;
+                    }
+
+                    navList.classList.remove('active');
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+
+            // Close open dropdowns when clicking outside nav (mobile)
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav') && !e.target.closest('.menu-toggle')) {
+                    document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+                }
+            });
+            
+            // Animaciones al hacer scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar elementos para animaciones
+            document.querySelectorAll('.plan-card, .additional-service, .service-category-title, .price-note, .additional-title, .opositor-highlights, .compatibility-note').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
