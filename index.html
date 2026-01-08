@@ -23,7 +23,7 @@
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     
     <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -68,7 +68,7 @@
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: var(--spacing-md);
@@ -124,6 +124,16 @@
         .section {
             padding: var(--spacing-xxl) 0;
         }
+
+        /* Utilidades para ajustar espacios entre secciones */
+        .section-tight {
+            padding-bottom: var(--spacing-md); /* reduce espacio inferior cuando se necesita */
+        }
+
+        /* Reducir el padding superior solo para la sección de contacto */
+        #contacto {
+            padding-top: var(--spacing-md);
+        }
         
         .section-dark {
             background-color: var(--primary-color);
@@ -141,7 +151,7 @@
             color: var(--text-light);
             border: none;
             border-radius: var(--border-radius);
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.063em;
@@ -175,24 +185,93 @@
             gap: var(--spacing-lg);
         }
         
+        /* Ajustes específicos para la sección de certificaciones */
+        .cert-grid {
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--spacing-md);
+            justify-items: center;
+            align-items: center;
+        }
+
+        /* Ajustes para la sección de contacto - mostrar horario a la derecha en pantallas grandes */
+        .contact-grid {
+            grid-template-columns: 1fr auto;
+            gap: var(--spacing-sm);
+            align-items: center;
+            max-width: 760px;
+            margin: 0 auto;
+            justify-items: center; /* Centrar los bloques dentro del grid */
+            text-align: center; /* Centrar el texto dentro de cada bloque */
+        }
+        .contact-grid > div {
+            text-align: center; /* Asegurar que los elementos hijos estén centrados */
+        }
+        .contact-schedule {
+            justify-self: center; /* Centrar la columna del horario */
+        }
+        .contact-schedule table {
+            width: auto;
+            margin: 0;
+            border-collapse: collapse;
+        }
+        .contact-schedule table td:first-child {
+            text-align: right;
+            padding-right: var(--spacing-sm);
+            color: var(--text-light);
+            font-weight: 600;
+            vertical-align: top;
+        }
+
+        .contact-schedule table td:last-child {
+            text-align: left;
+            color: var(--text-light);
+            margin: var(--spacing-sm);
+        }
+
+        .contact-info p {
+            text-align: justify;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 640px;
+        }
+        .contact-schedule {
+            justify-self: start;
+            text-align: center;
+        }
+        .contact-schedule table {
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* MAPA - añadir espacio inferior para separar del footer */
+        .map {
+            margin-bottom: var(--spacing-xxl);
+        }
+        
         /* HEADER Y NAVEGACIÓN */
         .header {
             background-color: var(--secondary-color);
-            padding: var(--spacing-md) 0;
+            padding: 15px 0; /* Reducido de 24px a 15px */
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            /* Make the header container span the full viewport width so items can sit close to the window edges */
+            max-width: 100%;
+            margin: 0; /* remove centering so it reaches the edges */
+            padding: 0 35px; /* small 12px side gap — slightly more than var(--spacing-xs) but less than before */
+            width: 100%;
         }
-        
+
         .logo {
-            max-height: 80px;
+            max-height: 70px; /* Reducido de 80px a 60px */
         }
         
         .nav {
@@ -207,7 +286,7 @@
         
         .nav-link {
             color: var(--text-light);
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.063em;
@@ -241,6 +320,7 @@
             left: 0;
             background-color: var(--primary-color);
             min-width: 200px;
+            max-width: calc(100vw - 40px); /* prevent overflow on small viewports */
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             padding: var(--spacing-sm);
@@ -249,6 +329,14 @@
             transform: translateY(10px);
             transition: var(--transition);
             z-index: 1001;
+            box-sizing: border-box;
+        }
+
+        /* If dropdown is the last or penultimate item, align dropdown to the right to avoid overflow */
+        .nav-list li:last-child .dropdown-content,
+        .nav-list li:nth-last-child(2) .dropdown-content {
+            right: 0;
+            left: auto;
         }
         
         .dropdown:hover .dropdown-content {
@@ -587,6 +675,7 @@
                 padding: var(--spacing-xl);
                 transition: var(--transition);
                 z-index: 1002;
+                overflow-y: auto;
             }
             
             .nav-list.active {
@@ -596,8 +685,31 @@
             .nav-link {
                 font-size: 1.2rem;
                 padding: var(--spacing-sm) 0;
+                width: 100%;
             }
-            
+
+            /* Make dropdown content flow inside the mobile nav and toggle via .open */
+            .nav-list .dropdown-content {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                padding-left: var(--spacing-md);
+                display: none;
+                opacity: 1;
+                visibility: visible;
+                width: 100%;
+            }
+
+            .nav-list .dropdown.open .dropdown-content {
+                display: block;
+            }
+
+            /* rotate the chevron when open */
+            .nav-list .dropdown.open > .nav-link i {
+                transform: rotate(180deg);
+                transition: transform 0.2s ease;
+            }
+
             .hero-title {
                 font-size: 2rem;
             }
@@ -731,7 +843,7 @@
             border: none;
             border-radius: var(--border-radius);
             cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.063em;
@@ -772,19 +884,19 @@
             <nav class="nav">
                 <ul class="nav-list" id="navList">
                     <li><a href="/" class="nav-link active">Inicio</a></li>
-                    <li><a href="/blog" class="nav-link">Blog</a></li>
-                    <li><a href="/sobre-ap" class="nav-link">Sobre AP</a></li>
+                    <!-- <li><a href="/blog" class="nav-link">Blog</a></li> -->
+                    <li><a href="sobre-ap.html" class="nav-link">Sobre AP</a></li>
                     
                     <!-- Dropdown Servicios -->
                     <li class="dropdown">
                         <a href="#" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
-                            <a href="/nutricion" class="dropdown-link">NUTRICIÓN</a>
-                            <a href="/entrenar-en-el-centro" class="dropdown-link">ENTRENAR EN EL CENTRO</a>
-                            <a href="/ciclismo" class="dropdown-link">CICLISMO</a>
-                            <a href="/du-triatlon" class="dropdown-link">DU-TRIATLÓN</a>
-                            <a href="/corredores-trailrunners" class="dropdown-link">CORREDORES / TRAILRUNNERS</a>
-                            <a href="/opositores" class="dropdown-link">OPOSITORES</a>
+                            <a href="servicios/nutricion.html" class="dropdown-link">NUTRICIÓN</a>
+                            <a href="servicios/entrenar-en-el-centro.html" class="dropdown-link">ENTRENAR EN EL CENTRO</a>
+                            <a href="servicios/ciclismo.html" class="dropdown-link">CICLISMO</a>
+                            <a href="servicios/du-triatlon.html" class="dropdown-link">DU-TRIATLÓN</a>
+                            <a href="servicios/corredores-trailrunners.html" class="dropdown-link">CORREDORES / TRAILRUNNERS</a>
+                            <a href="servicios/opositores.html" class="dropdown-link">OPOSITORES</a>
                         </div>
                     </li>
                 </ul>
@@ -826,6 +938,8 @@
             <div class="grid">
                 <div class="fade-in">
                     <div class="text-center">
+                        <br></br>
+                        <br></br>
                         <i class="fas fa-comment-dots service-icon"></i>
                         <h3>En AP respetamos el principio de entrenamiento más importante: LA INDIVIDUALIZACIÓN</h3>
                     </div>
@@ -850,14 +964,20 @@
                 <div class="info-text fade-in delay-1">
                     <div class="text-left">
                         <i class="fas fa-lightbulb service-icon" style="color: var(--accent-color);"></i>
-                        <h3 style="color: white;">En el apartado "SERVICIOS" se encuentran detallados todos ellos.</h3>
-                        <p style="color: white;"></pstyle>Puedes encontrar información sobre los entrenamientos online, presenciales grupales o individuales, nutrición, prueba de fuerza y mucho más.</p>
-                        
-                        <hr style="border: none; height: 2px; background: var(--accent-color); width: 50px; margin: var(--spacing-md) 0;">
-                        
-                        <p style="font-size: 1.1rem; font-weight: 600;">
-                            <strong style="color: white;">No dudes en escribirnos si tienes alguna duda o sugerencia.</strong>
-                        </p>
+                        <h3 style="color: white;">SERVICIOS</h3>
+                        <p style="color: white;"></pstyle>Entrenamientos online, presenciales grupales o individuales, nutrición, prueba de fuerza y mucho más:</p>
+                        <ul>
+                        <li><a href="servicios/nutricion.html">NUTRICIÓN</a></li>
+                        <li><a href="servicios/entrenar-en-el-centro.html">ENTRENAR EN EL CENTRO</a></li>
+                        <li><a href="servicios/ciclismo.html">CICLISMO</a></li>
+                        <li><a href="servicios/du-triatlon.html">DU-TRIATLÓN</a></li>
+                        <li><a href="servicios/corredores-trailrunners.html">CORREDORES / TRAILRUNNERS</a></li>
+                        <li><a href="servicios/opositores.html">OPOSITORES</a></li>
+                        </ul>
+                        <hr style="border: none; height: 2px; background: var(--accent-color); width: 50px; margin: var(--spacing-md) auto;">
+                        <a href="https://wa.me/34650751468" target="_blank" class="btn" style="background-color: #25D366; margin-bottom: var(--spacing-lg);">
+                        <i class="fab fa-whatsapp"></i> Escríbenos si tienes dudas o sugerencias
+                        </a>
                     </div>
                 </div>
             </div>
@@ -868,7 +988,7 @@
     <section class="section">
         <div class="container">
             <h3 class="text-center fade-in">Certificaciones</h3>
-            <div class="grid" style="margin-top: var(--spacing-xl);">
+            <div class="grid cert-grid" style="margin-top: var(--spacing-xl);">
                 <div class="text-center fade-in">
                     <img src="img/cert.png" alt="Certificación 1" style="height: 100px; margin: 0 auto;">
                 </div>
@@ -889,7 +1009,7 @@
     </section>
 
     <!-- SECCIÓN REDES SOCIALES -->
-    <section class="section section-dark">
+    <section class="section section-dark section-tight">
         <div class="container text-center">
             <h2 class="fade-in">Conéctate con nosotros</h2>
             <div style="margin-top: var(--spacing-lg);" class="fade-in delay-1">
@@ -898,108 +1018,66 @@
                 </a>
                 <!-- Agrega más redes sociales aquí -->
             </div>
-                    <div class="contact-form" style="background-color: #152349;">
-                        <h4>Escríbenos sin compromiso</h4>
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre*" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Correo electrónico*" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" placeholder="Mensaje*" required></textarea>
-                            </div>
-                            <button type="submit" class="btn" style="width: 100%;">Enviar</button>
-                            <p style="font-size: 0.8rem; color: #666; margin-top: var(--spacing-sm);">
-                                Este sitio está protegido por reCAPTCHA y aplican las 
-                                <a href="https://policies.google.com/privacy" target="_blank">Política de privacidad</a> y 
-                                <a href="https://policies.google.com/terms" target="_blank">Términos de servicio</a> de Google.
-                            </p>
-                        </form>
-                    </div>
+                    <br></br>
+                    <a href="https://wa.me/34650751468" target="_blank" class="btn" style="background-color: #25D366; margin-bottom: var(--spacing-lg);">
+                    <i class="fab fa-whatsapp"></i> Escríbenos sin compromiso
+                    </a>
+
+                     <h4>O, aún mejor, ¡ven a visitarnos!</h4>
+                    <p style="margin-bottom: var(--spacing-lg);">Nos encanta recibir a nuestros clientes, pide tu cita previa y ven a conocernos.</p>
         </div>
     </section>
 
-    <!-- SECCIÓN CONTACTO -->
-     <h1>borrar?</h1>
-    <section class="section" id="contacto">
-        <div class="container">
-            <div class="grid">
-                <div class="fade-in">
-                    <div class="contact-form">
-                        <h4>Escríbenos sin compromiso</h4>
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre*" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Correo electrónico*" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" placeholder="Mensaje*" required></textarea>
-                            </div>
-                            <button type="submit" class="btn" style="width: 100%;">Enviar</button>
-                            <p style="font-size: 0.8rem; color: #666; margin-top: var(--spacing-sm);">
-                                Este sitio está protegido por reCAPTCHA y aplican las 
-                                <a href="https://policies.google.com/privacy" target="_blank">Política de privacidad</a> y 
-                                <a href="https://policies.google.com/terms" target="_blank">Términos de servicio</a> de Google.
-                            </p>
-                        </form>
-                    </div>
-                </div>
+    <!-- SECCIÓN CONTACTO OCULTA-->
+    <!-- <section class="section" id="contacto" style="background-color: #152349;"> 
+         <section class="section" id="contacto" style="background-color: violet">
+        <div class="container text">
+            <div class="grid contact-grid">
                 
-                <div class="fade-in delay-1">
-                    <h4>O, aún mejor, ¡ven a visitarnos!</h4>
-                    <p style="margin-bottom: var(--spacing-lg);">Nos encanta recibir a nuestros clientes, pide tu cita previa y ven a conocernos.</p>
-                    
-                    <a href="https://wa.me/34650751468" target="_blank" class="btn" style="background-color: #25D366; margin-bottom: var(--spacing-lg);">
-                        <i class="fab fa-whatsapp"></i> Nos adaptamos a ti, consúltanos
-                    </a>
-                    
+                <div class="fade-in delay-1 contact-info" style="color:white;">
                     <h4>AP CLÍNICA DE NUTRICIÓN Y DIETÉTICA- ENTRENAMIENTO</h4>
                     <p>Calle Maestro Dólera, 1º bis, 30600 Archena, Murcia, Spain</p>
                     <p>Teléfono: <a href="tel:650751468">650751468</a></p>
                     <p>Email: <a href="mailto:asesoramientoaperez@gmail.com">asesoramientoaperez@gmail.com</a></p>
-                    
-                    <div style="margin-top: var(--spacing-xl);">
-                        <h4>Horario</h4>
-                        <table style="width: 100%;">
-                            <tr>
-                                <td><strong>lun - jue:</strong></td>
-                                <td>06:45 – 23:00</td>
-                            </tr>
-                            <tr>
-                                <td><strong>vie:</strong></td>
-                                <td>06:45 – 20:00</td>
-                            </tr>
-                            <tr>
-                                <td><strong>sáb:</strong></td>
-                                <td>Cita previa</td>
-                            </tr>
-                            <tr>
-                                <td><strong>dom:</strong></td>
-                                <td>Cerrado</td>
-                            </tr>
-                        </table>
-                    </div>
+                </div>
+
+                <div class="contact-schedule fade-in delay-1" style="color:white;">
+                    <h4>Horario</h4>
+                    <table style="width: auto;">
+                        <tr>
+                            <td><strong>lun - jue:</strong></td>
+                            <td>06:45 – 23:00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>vie:</strong></td>
+                            <td>06:45 – 20:00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>sáb:</strong></td>
+                            <td>Cita previa</td>
+                        </tr>
+                        <tr>
+                            <td><strong>dom:</strong></td>
+                            <td>Cerrado</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- MAPA -->
-    <div style="height: 400px; width: 100%;" class="fade-in">
-        <!-- Aquí puedes agregar un mapa de Google Maps -->
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.168716000456!2d-1.300000!3d37.933333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDU2JzAwLjAiTiAxwrAxOCcwMC4wIlc!5e0!3m2!1ses!2ses!4v1620000000000!5m2!1ses!2ses" 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
+    <div class="map fade-in" style="height: 400px; width: 100%;">
+        <iframe
+        width="100%"
+        height="450"
+        style="border:0"
+        loading="lazy"
+        src="https://www.google.com/maps?q=AP,+Clínica+de+Nutrición+y+Dietética+-+Centro+de+Entrenamiento+personal&ll=38.1140074,-1.2972371&z=15&output=embed">
         </iframe>
     </div>
+
+
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -1009,7 +1087,7 @@
                     <h4>Enlaces</h4>
                     <ul>
                         <li><a href="/">Inicio</a></li>
-                        <li><a href="/blog">Blog</a></li>
+                        <!-- <li><a href="/blog">Blog</a></li> -->
                         <li><a href="/sobre-ap">Sobre AP</a></li>
                     </ul>
                 </div>
@@ -1017,12 +1095,12 @@
                 <div class="footer-section">
                     <h4>Servicios</h4>
                     <ul>
-                        <li><a href="/nutricion">NUTRICIÓN</a></li>
-                        <li><a href="/entrenar-en-el-centro">ENTRENAR EN EL CENTRO</a></li>
-                        <li><a href="/ciclismo">CICLISMO</a></li>
-                        <li><a href="/du-triatlon">DU-TRIATLÓN</a></li>
-                        <li><a href="/corredores-trailrunners">CORREDORES / TRAILRUNNERS</a></li>
-                        <li><a href="/opositores">OPOSITORES</a></li>
+                        <li><a href="servicios/nutricion.html">NUTRICIÓN</a></li>
+                        <li><a href="servicios/entrenar-en-el-centro.html">ENTRENAR EN EL CENTRO</a></li>
+                        <li><a href="servicios/ciclismo.html">CICLISMO</a></li>
+                        <li><a href="servicios/du-triatlon.html">DU-TRIATLÓN</a></li>
+                        <li><a href="servicios/corredores-trailrunners.html">CORREDORES / TRAILRUNNERS</a></li>
+                        <li><a href="servicios/opositores.html">OPOSITORES</a></li>
                     </ul>
                 </div>
                 
@@ -1042,13 +1120,11 @@
                     Domingo: Cerrado</p>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>Copyright © 2021 AP, Asesoramiento Personal Nutricional y Deportivo - Todos los derechos reservados.</p>
-                <p style="margin-top: var(--spacing-xs); font-size: 0.9rem;">
-                    Con tecnología de <a href="https://html5.com" target="_blank" style="color: var(--accent-color);">HTML5</a>
-                </p>
+                 <div class="footer-bottom">
+                <p>Copyright © 2026 AP, Asesoramiento Personal Nutricional y Deportivo - Todos los derechos reservados.</p>
+                </div>
             </div>
+            
         </div>
     </footer>
 
@@ -1086,12 +1162,29 @@
                     : '<i class="fas fa-bars"></i>';
             });
             
-            // Cerrar menú al hacer clic en enlace
+            // Cerrar menú al hacer clic en enlace (soporta submenus en móvil)
             document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
+                link.addEventListener('click', (e) => {
+                    const parentDropdown = link.parentElement;
+                    const navIsMobile = navList.classList.contains('active') || window.innerWidth <= 768;
+
+                    if (parentDropdown.classList.contains('dropdown') && navIsMobile) {
+                        // Toggle submenu in mobile instead of closing the nav
+                        e.preventDefault();
+                        parentDropdown.classList.toggle('open');
+                        return;
+                    }
+
                     navList.classList.remove('active');
                     menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
                 });
+            });
+
+            // Close open dropdowns when clicking outside nav (mobile)
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav') && !e.target.closest('.menu-toggle')) {
+                    document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+                }
             });
             
             // Formulario de contacto
