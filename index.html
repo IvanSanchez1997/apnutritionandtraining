@@ -1129,7 +1129,7 @@
     </footer>
 
     <!-- COOKIE BANNER -->
-    <div class="cookie-banner" id="cookieBanner">
+   <!--<div class="cookie-banner" id="cookieBanner">
         <div class="cookie-content">
             <div class="cookie-text">
                 <h4>Este sitio web utiliza cookies</h4>
@@ -1140,7 +1140,7 @@
                 <button class="cookie-btn cookie-accept" id="cookieAccept">Aceptar</button>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <!-- SCRIPT PRINCIPAL -->
     <script>
@@ -1221,12 +1221,12 @@
             });
             
             // Cookie Banner
-            const cookieBanner = document.getElementById('cookieBanner');
+            /*const cookieBanner = document.getElementById('cookieBanner');
             const cookieAccept = document.getElementById('cookieAccept');
-            const cookieDecline = document.getElementById('cookieDecline');
+            const cookieDecline = document.getElementById('cookieDecline');*/
             
             // Mostrar banner si no hay preferencia guardada
-            if (!localStorage.getItem('cookiesAccepted')) {
+           /*if (!localStorage.getItem('cookiesAccepted')) {
                 setTimeout(() => {
                     cookieBanner.classList.add('active');
                 }, 1000);
@@ -1240,7 +1240,7 @@
             cookieDecline.addEventListener('click', () => {
                 localStorage.setItem('cookiesAccepted', 'false');
                 cookieBanner.classList.remove('active');
-            });
+            });*/
             
             // Smooth scroll para enlaces internos
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
